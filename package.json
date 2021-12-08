@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@fullcalendar/core": "^5.10.1",
         "@fullcalendar/daygrid": "^5.10.1",
         "@fullcalendar/interaction": "^5.10.1",
         "@fullcalendar/timegrid": "^5.10.1",

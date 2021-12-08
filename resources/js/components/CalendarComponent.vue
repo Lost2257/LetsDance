@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="my-bg">
 
         <div class="container">
             <full-calendar
@@ -20,14 +20,29 @@
                         <button class="btn btn-success" data-toggle="modal" data-target="#addNew">Add event</button>
 <!--                        <button class="btn btn-success" @click="newModal">Add event</button>-->
                     </th>
-                    <th scope="col">Eventai</th>
-                    <th scope="col">Veiksmai</th>
+                    <th scope="col">
+                        <p class="spalva">Eventai</p>
+                    </th>
+                    <th scope="col">
+                        <p class="spalva">Pavadinimas</p>
+                    </th>
+                    <th scope="col">
+                        <p class="spalva">Veiksmai</p>
+                    </th>
+
                 </tr>
                 </thead>
                 <tbody v-for="event in events" :key="event.id">
                 <tr>
-                    <th scope="row">{{ event.id }}</th>
-                    <td>{{ event.title }}</td>
+                    <th scope="row">
+                        <p class="spalva">{{ event.id }}</p>
+                    </th>
+                    <th scope="row">
+                        <p class="spalva">{{ event.start }} -> {{ event.end }}</p>
+                    </th>
+                    <td>
+                       <p class="spalva">{{ event.title }}</p>
+                    </td>
                     <td>
                     <span class="btn btn-danger" v-on:click="deleteEvent(event.id)">
                     <i class="fas fa-trash-alt"></i>
@@ -104,6 +119,7 @@ export default {
             },
             config: {
                 locale: 'lt',
+                defaultView: 'month'
             },
             addingMode: true,
             indexToUpdate: "",

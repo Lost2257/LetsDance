@@ -2161,6 +2161,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2175,7 +2190,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         event_end: ""
       },
       config: {
-        locale: 'lt'
+        locale: 'lt',
+        defaultView: 'month'
       },
       addingMode: true,
       indexToUpdate: "",
@@ -2400,12 +2416,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       events: [],
       config: {
-        locale: 'lt'
+        locale: 'lt',
+        defaultView: 'month'
       }
     };
   },
@@ -77403,7 +77423,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "my-bg" }, [
     _c(
       "div",
       { staticClass: "container" },
@@ -77430,10 +77450,22 @@ var render = function () {
               return _c("tbody", { key: event.id }, [
                 _c("tr", [
                   _c("th", { attrs: { scope: "row" } }, [
-                    _vm._v(_vm._s(event.id)),
+                    _c("p", { staticClass: "spalva" }, [
+                      _vm._v(_vm._s(event.id)),
+                    ]),
                   ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(event.title))]),
+                  _c("th", { attrs: { scope: "row" } }, [
+                    _c("p", { staticClass: "spalva" }, [
+                      _vm._v(_vm._s(event.start) + " -> " + _vm._s(event.end)),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("p", { staticClass: "spalva" }, [
+                      _vm._v(_vm._s(event.title)),
+                    ]),
+                  ]),
                   _vm._v(" "),
                   _c("td", [
                     _c(
@@ -77634,9 +77666,17 @@ var staticRenderFns = [
           ),
         ]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Eventai")]),
+        _c("th", { attrs: { scope: "col" } }, [
+          _c("p", { staticClass: "spalva" }, [_vm._v("Eventai")]),
+        ]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Veiksmai")]),
+        _c("th", { attrs: { scope: "col" } }, [
+          _c("p", { staticClass: "spalva" }, [_vm._v("Pavadinimas")]),
+        ]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _c("p", { staticClass: "spalva" }, [_vm._v("Veiksmai")]),
+        ]),
       ]),
     ])
   },
@@ -77701,7 +77741,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("div", { staticClass: "my-bg" }, [
     _vm._m(0),
     _vm._v(" "),
     _c("section", [
@@ -77715,19 +77755,19 @@ var render = function () {
           _vm._m(1),
           _vm._v(" "),
           _c("div", { staticClass: "carousel-inner" }, [
-            _c("div", { staticClass: "item active" }, [
+            _c("div", { staticClass: "item active img-height" }, [
               _c("img", { attrs: { src: _vm.getImage(), alt: "logo" } }),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "item img-height" }, [
               _c("img", { attrs: { src: _vm.getImage2(), alt: "logo" } }),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "item img-height" }, [
               _c("img", { attrs: { src: _vm.getImage3(), alt: "logo" } }),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "item img-height" }, [
               _c("img", { attrs: { src: _vm.getImage4(), alt: "logo" } }),
             ]),
           ]),
@@ -77739,14 +77779,22 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _vm._m(4),
-    _vm._v(" "),
-    _c("section", [
+    _c("section", { staticClass: "my-bg" }, [
+      _c(
+        "h2",
+        {
+          staticClass: "my-bg bg-up-calendar text-center",
+          attrs: { id: "užsiėmimai" },
+        },
+        [_vm._v("Užsiėmimų tvarkaraštis")]
+      ),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "container col-12 py-5" },
         [
           _c("full-calendar", {
+            staticClass: "kalendorius cal-color",
             attrs: {
               events: _vm.events,
               config: _vm.config,
@@ -77762,6 +77810,8 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
+    _vm._m(4),
+    _vm._v(" "),
     _vm._m(5),
   ])
 }
@@ -77772,10 +77822,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "nav",
-      { staticClass: "navbar navbar-expand-lg  navbar-dark bg-dark" },
+      { staticClass: "navbar navbar-expand-lg  navbar-dark my-bg" },
       [
         _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-          _vm._v("LetsDance"),
+          _vm._v("Šokių Studija LetsGoDance"),
         ]),
         _vm._v(" "),
         _c(
@@ -77805,22 +77855,28 @@ var staticRenderFns = [
               _c(
                 "a",
                 {
-                  staticClass: "nav-link active",
+                  staticClass: "nav-link active hoveris",
                   attrs: { href: "#myCarousel" },
                 },
-                [_vm._v("Media")]
+                [_vm._v("Nuotraukos")]
               ),
               _vm._v(" "),
               _c(
                 "a",
-                { staticClass: "nav-link active", attrs: { href: "#mapas" } },
+                {
+                  staticClass: "nav-link active hoveris",
+                  attrs: { href: "#užsiėmimai" },
+                },
+                [_vm._v("Užsiėmimų tvarkaraštis")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link active hoveris",
+                  attrs: { href: "#mapas" },
+                },
                 [_vm._v("Kontaktai")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                { staticClass: "nav-link active", attrs: { href: "#" } },
-                [_vm._v("Kalendorius")]
               ),
             ]),
           ]
@@ -77890,6 +77946,8 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", [
+      _c("h2", { staticClass: "text-center" }, [_vm._v("Kur mus rasti?")]),
+      _vm._v(" "),
       _c("iframe", {
         staticStyle: { border: "0" },
         attrs: {
@@ -77916,17 +77974,36 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("ul", [
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("3706060999")]),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "list-group-item disabled rounded-pill mt-1",
+                      attrs: { href: "#" },
+                    },
+                    [_vm._v("3706060999")]
+                  ),
                 ]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("test@gmail.com")]),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "list-group-item disabled rounded-pill mt-1",
+                      attrs: { href: "#" },
+                    },
+                    [_vm._v("test@gmail.com")]
+                  ),
                 ]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("test2@gmail.com"),
-                  ]),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "list-group-item disabled rounded-pill mt-1",
+                      attrs: { href: "#" },
+                    },
+                    [_vm._v("test2@gmail.com")]
+                  ),
                 ]),
               ]),
             ]),
@@ -77936,37 +78013,70 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("ul", [
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Kaunas")]),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "list-group-item disabled rounded-pill mt-1",
+                      attrs: { href: "#" },
+                    },
+                    [_vm._v("Kaunas")]
+                  ),
                 ]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("siaurse pr")]),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "list-group-item disabled rounded-pill mt-1",
+                      attrs: { href: "#" },
+                    },
+                    [_vm._v("siaurse pr")]
+                  ),
                 ]),
               ]),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-6 item text" }, [
-              _c("h3", [_vm._v("LetsDance")]),
+              _c("h3", [_vm._v("LetsGoDance")]),
               _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo."
-                ),
-              ]),
+              _c(
+                "p",
+                { staticClass: "list-group-item disabled rounded-pill" },
+                [
+                  _vm._v(
+                    "Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo."
+                  ),
+                ]
+              ),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col item social" }, [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "fab fa-facebook" }),
-              ]),
+              _c(
+                "a",
+                {
+                  staticClass: "hoveris",
+                  attrs: { href: "https://www.facebook.com/" },
+                },
+                [_c("i", { staticClass: "fab fa-facebook" })]
+              ),
               _vm._v(" "),
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "fab fa-twitter" }),
-              ]),
+              _c(
+                "a",
+                {
+                  staticClass: "hoveris",
+                  attrs: { href: "https://twitter.com/" },
+                },
+                [_c("i", { staticClass: "fab fa-twitter" })]
+              ),
               _vm._v(" "),
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "fab fa-instagram" }),
-              ]),
+              _c(
+                "a",
+                {
+                  staticClass: "hoveris",
+                  attrs: { href: "https://www.instagram.com/" },
+                },
+                [_c("i", { staticClass: "fab fa-instagram" })]
+              ),
             ]),
           ]),
         ]),

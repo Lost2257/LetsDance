@@ -1,6 +1,38 @@
 .navbar{
     margin-bottom:0 !important;
 }
+
+h2{
+    color: white !important;
+}
+
+.img-height{
+    height: 80%;
+}
+
+@media (max-width:920px) {
+    .img-height {
+        height: auto;
+    }
+}
+
+.my-bg{
+    background-color: #282d32 !important;
+}
+
+.spalva{
+    background-image: linear-gradient(to left, rgb(75, 87, 255), rgb(75, 25, 255), rgb(11, 11, 204), rgb(29, 1, 153), rgb(72, 255, 224), rgb(16, 164, 223), rgb(2, 95, 156));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hoveris:hover{
+    font-size: 200%;
+    transition: 2.5s;
+    background-image: linear-gradient(to left, rgb(75, 87, 255), rgb(75, 25, 255), rgb(11, 11, 204), rgb(29, 1, 153), rgb(72, 255, 224), rgb(16, 164, 223), rgb(2, 95, 156));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .footer-dark {
     padding:50px 0;
     color:#f0f9ff;
@@ -89,5 +121,34 @@
     margin-bottom:0;
 }
 
+
 /*KALENDORIUS*/
+.bg-up-calendar{
+    margin-top: 5%;
+}
+
+.fc th, .fc td, h2{
+    color: #f0f9ff;
+}
+
+.fc-unthemed td.fc-today {
+    background: #5e5e5e !important; 
+}
+
+.fc-content{
+    background-color: white;
+}
+
+.fc-time, .fc-title{
+    color: black;
+}
+
+.fc-event{
+    border: 1px solid black !important;
+}
+
+
+.fc-list-table tr:first-child td {
+    background-color: #282d32;
+}
 
